@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<title> Diabetes Prediction </title>-->
+        <meta charset='utf-8'/>
+        <title>{{title}}</title>
+        <style type="text/css">
+            .head{
+                font-size: 48px;text-decoration-line: underline;background-color: #7788aa;color:cornsilk;
+                font-weight: bold;text-align: center;padding: 10px;
+                
+            }
+            .content_block{
+                width: 1024px; margin-right: auto; margin-left: auto; text-align: center;
+            }
+            .content_title{
+                font-size: 38px;font-weight: bold;color:darkgrey;margin-top: 5px;margin-bottom: 15px;
+            }
+            .content{
+                font-size: 30px;margin-bottom: 20px;text-align: center;
+            }
+            
+        </style>
+    </head>
+    <body style="margin : 0px">
+        <div class='head'>~ ~ Welcome To My Web ~ ~</div>
+        <div class='content_block'>
+            <div class='content_title'>--This is my diabetes prediction--</div>
+            <div class='content'>My dataset comes from  
+                <span> 
+                    <a href='https://archive.ics.uci.edu/ml/index.php'> UC Irvine Machine Learning Repository(UCI)</a>
+                </span>.
+            </div>
+            <div class='content'>The title name of the dataset I used is 
+                <span>
+                    <a href="http://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset." style="font-weight: bold;">
+                        Early stage diabetes risk prediction dataset
+                    </a>.
+                </span> 
+            </div>
+            <div class='content'>
+                Accoring to the dataset, I think all of factors can impact diabetes.
+                <div style="font-size: 30px;margin-top:20px;margin-bottom:10px;text-align: center;">Total of 16 factors are as follows :</div>
+                <br/>
+                <table align="center">
+                    <tr style="text-align: left;">
+                        <td style="padding-right: auto;"><li>Age</li></td>
+                        <td style="padding-right: auto;"><li>Gender</li></td>
+                        <td style="padding-right: auto;"><li>Polyuria</li></td>
+                        <td style="padding-right: auto;"><li>Polydipsia</li></td>
+                    </tr>
+                    <tr style="text-align: left;">
+                        <td style="padding-right: auto;"><li>Sudden weight loss</li></td>
+                        <td style="padding-right: auto;"><li>Weakness</li></td>
+                        <td style="padding-right: auto;"><li>Polyphagia</li></td>
+                        <td style="padding-right: auto;"><li>Genital thrush</li></td>
+                    </tr>
+                    <tr style="text-align: left;">
+                        <td style="padding-right: auto;"><li>Visual blurring</li></td>
+                        <td style="padding-right: auto;"><li>Itching</li></td>
+                        <td style="padding-right: auto;"><li>Irritability</li></td>
+                        <td style="padding-right: auto;"><li>Delayed healing</li></td>
+                    </tr>
+                    <tr style="text-align: left;">
+                        <td style="padding-right: auto;"><li>Partial paresis</li></td>
+                        <td style="padding-right: auto;"><li>Muscle stiffness</li></td>
+                        <td style="padding-right: auto;"><li>Alopecia</li></td>
+                        <td style="padding-right: auto;"><li>Obesity</li></td>
+                    </tr>
+                </table>   
+            </div>
+            <hr style="margin-bottom: 30px;"/>
+            <div class='content'>The accuracy of my diabetes risk prediction model is about 92% !!</div>
+            <a href='/predict' style="color:darkslateblue;font-size: 30px;">Go To Predict >></a> 
+            <div style="margin-top:50px;">
+                <img src="{{url_for('static',filename='diabetes.jpg')}}" width='460' height="300" alt='picture' title="diabete"/>
+                <img src="static/diabetes1.png/" width='300' height="300" alt='picture' title="diabete"/>
+            </div>           
+        </div>
+        
+    </body>
+</html>
