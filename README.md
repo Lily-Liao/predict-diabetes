@@ -11,9 +11,13 @@ https://diabetes-risk-predict.herokuapp.com/index
 ### 預測模型介紹：
 * 使用MLP架構去編寫模型  
 >模型摘要
->>[image](https://github.com/Lily-Liao/predict-diabetes/blob/master/model_summary.png)
-* 訓練過程
->accuracy執行結果
->>[image](https://github.com/Lily-Liao/predict-diabetes/blob/master/acc.png)
->loss誤差執行結果
->>[image](https://github.com/Lily-Liao/predict-diabetes/blob/master/loss.png)
+>>![image](https://github.com/Lily-Liao/predict-diabetes/blob/master/model_summary.png)
+* 訓練過程  
+>accuracy執行結果  
+>>![image](https://github.com/Lily-Liao/predict-diabetes/blob/master/acc.png)   
+>loss誤差執行結果  
+>>![image](https://github.com/Lily-Liao/predict-diabetes/blob/master/loss.png)  
+* 模型準確率
+>準確率有92%  
+>>![image](https://github.com/Lily-Liao/predict-diabetes/blob/master/model_score.png)
+
