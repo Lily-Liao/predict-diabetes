@@ -9,4 +9,11 @@ https://diabetes-risk-predict.herokuapp.com/index
 * 部屬至Heroku雲端伺服器  
 
 ### 預測模型介紹：
->使用MLP架構去編寫模型  
+* 使用MLP架構去編寫模型  
+>模型摘要
+>>[image](https://github.com/Lily-Liao/predict-diabetes/blob/master/model_summary.png)
+* 訓練過程
+>accuracy執行結果
+>>[image](https://github.com/Lily-Liao/predict-diabetes/blob/master/acc.png)
+>loss誤差執行結果
+>>[image](https://github.com/Lily-Liao/predict-diabetes/blob/master/loss.png)
