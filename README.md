@@ -1,7 +1,7 @@
 # 早期糖尿病風險預測
 
 ## 網站鏈結：
-https://diabetes-risk-predict.herokuapp.com/index   
+https://diabetes-risk-predict.herokuapp.com/   
 
 ## 架構流程：
 * 使用Keras這個TensorFlow高階API去編寫風險預測模型  
