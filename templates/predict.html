@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Diabetes Prediction </title>
+        <title> 糖尿病風險預測 </title>
         <meta charset='utf-8'/>
         <style type="text/css">
             .title{
@@ -19,93 +19,93 @@
             <div style="height: 100px;font-size: 32px;font-weight: bold;text-align: center;">
                 {% if risk_rate%}
                     {% if risk_rate > 80.0 %}
-                        <p style="font-weight: bold;color: rgb(199, 33, 33);>
-                            <span style="font-weight: bold;color:red">Warning!!</span>
-                            Yor prediction of the diabetes risk rate is {{risk_rate}}%.
+                        <p style="font-weight: bold;color: rgb(199, 33, 33);">
+                            <span style="font-weight: bold;color:red">警告!!</span>
+                            您的糖尿病風險預測值高達 {{risk_rate}}%.
                         </p>
-                        <p style="font-weight: bold;margin-bottom: 15px;">I suggest you go to the hospital to check your health quickly!!</p>
+                        <p style="font-weight: bold;margin-bottom: 15px;">建議您盡快去醫院檢查確認您的健康!!</p>
                     {% elif risk_rate > 60.0 %}
-                        <p style="font-weight: bold; color: salmon;">Yor prediction of the diabetes risk rate is {{risk_rate}}%.</p>
-                        <p style='margin-bottom: 15px;font-weight: bold;'>You have risk of diabetes!!</p>
+                        <p style="font-weight: bold; color: salmon;">您的糖尿病風險預測值約為 {{risk_rate}}%.</p>
+                        <p style='margin-bottom: 15px;font-weight: bold;'>您可能患有糖尿病!!</p>
                     {%else%}
-                        <p style="font-weight: bold;">You're healthy.Yor prediction of the diabetes risk rate is lower than 60%.</p>
+                        <p style="font-weight: bold;">恭喜~您很健康.您的糖尿病風險預測值低於60%.</p>
 
                     {%endif%}        
                 {%else%}
                     <p/>
                 {%endif%}        
             </div>
-            <div class='title'>Diabetes Risk Prediction</div>
-            <div style='font-weight: bold;font-size: 30px;'>Please answer the following questions according to your own situation:</div>
+            <div class='title'>糖尿病風險預測</div>
+            <div style='font-weight: bold;font-size: 30px;'>請根據自身狀況回答以下問題:</div>
             <form method="POST" action="{{url_for('submit')}}" >
-                <p class='question_content'>1.How old are you?
+                <p class='question_content'>1.請問今年幾歲?
                     <input type="text" name='age' style="font-size: 24px;margin-left: 18px;" required="required">
                 </p>
-                <p class='question_content'>2.What's your Gender?
+                <p class='question_content'>2.請問您的性別?
                     <label><input type="radio" name='sex' value="Male" >Male</label>
                     <label><input type="radio" name='sex' value="Female" checked="true">Female</label> 
                 </p>
-                <p class='question_content' >3.Polyuria :
+                <p class='question_content' >3.是否有<b>頻尿</b>的症狀? :
                     <label><input type="radio" name='polyuria' value="Yes" >Yes</label>
                     <label><input type="radio" name='polyuria' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>4.Polydipsia :
+                <p class='question_content'>4.是否有<b>多飲</b>的症狀? :
                     <label><input type="radio" name='polydipsia' value="Yes" >Yes</label>
                     <label><input type="radio" name='polydipsia' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>5.Sudden weight loss :
+                <p class='question_content'>5.是否有<b>突然體重減輕</b>的症狀? :
                     <label><input type="radio" name='sudden weight loss' value="Yes" >Yes</label>
                     <label><input type="radio" name='sudden weight loss' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>6.Weakness :
+                <p class='question_content'>6.是否有<b>身體虚弱</b>的症狀? :
                     <label><input type="radio" name='weakness' value="Yes" >Yes</label>
                     <label><input type="radio" name='weakness' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>7.Polyphagia :
+                <p class='question_content'>7.是否有<b>多食</b>的症狀? :
                     <label><input type="radio" name='polyphagia' value="Yes" >Yes</label>
                     <label><input type="radio" name='polyphagia' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>8.Genital thrush :
+                <p class='question_content'>8.是否有<b>生殖器鵝口瘡</b>的症狀? :
                     <label><input type="radio" name='genital thrush' value="Yes" >Yes</label>
                     <label><input type="radio" name='genital thrush' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>9.Visual blurring :
+                <p class='question_content'>9.是否有<b>視線模糊</b>的症狀? :
                     <label><input type="radio" name='visual blurring' value="Yes" >Yes</label>
                     <label><input type="radio" name='visual blurring' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>10.Itching :
+                <p class='question_content'>10.是否有<b>瘙癢</b>的症狀? :
                     <label><input type="radio" name='itching' value="Yes" >Yes</label>
                     <label><input type="radio" name='itching' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>11.Irritability :
+                <p class='question_content'>11.是否有<b>煩燥</b>的症狀? :
                     <label><input type="radio" name='irritability' value="Yes" >Yes</label>
                     <label><input type="radio" name='irritability' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>12.Delayed healing :
+                <p class='question_content'>12.是否有<b>延期愈合</b>的症狀? :
                     <label><input type="radio" name='delayed healing' value="Yes" >Yes</label>
                     <label><input type="radio" name='delayed healing' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>13.Partial paresis :
+                <p class='question_content'>13.是否有<b>局部麻痹</b>的症狀? :
                     <label><input type="radio" name='partial paresis' value="Yes" >Yes</label>
                     <label><input type="radio" name='partial paresis' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>14.Muscle stiffness :
+                <p class='question_content'>14.是否有<b>肌肉僵硬</b>的症狀? :
                     <label><input type="radio" name='muscle stiffness' value="Yes" >Yes</label>
                     <label><input type="radio" name='muscle stiffness' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>15.Alopecia :
+                <p class='question_content'>15.是否有<b>脫髮</b>的症狀? :
                     <label><input type="radio" name='alopecia' value="Yes" >Yes</label>
                     <label><input type="radio" name='alopecia' value="No" checked="true">No</label> 
                 </p>
-                <p class='question_content'>16.Obesity :
+                <p class='question_content'>16.是否有<b>肥胖</b>的症狀? :
                     <label><input type="radio" name='obesity' value="Yes" >Yes</label>
                     <label><input type="radio" name='obesity' value="No" checked="true">No</label> 
                 </p>
                 <hr/>
                 <p style="margin-left: auto;margin-right: auto;display: table;">
-                    <input type="button" value="Go back" onclick="location.href='index';" style="font-size: 24px;margin-right: 10px;">
-                    <button type="submit" style="font-size: 24px;margin-right: 10px;margin-left: 10px;">Submit</button>
-                    <button type="reset" style="font-size: 24px;margin-left: 10px;">Cancel</button>
+                    <input type="button" value="返回首頁" onclick="location.href='index-zh';" style="font-size: 24px;margin-right: 10px;">
+                    <button type="submit" style="font-size: 24px;margin-right: 10px;margin-left: 10px;">提交</button>
+                    <button type="reset" style="font-size: 24px;margin-left: 10px;">取消</button>
                 </p>
             </form>
         </div>

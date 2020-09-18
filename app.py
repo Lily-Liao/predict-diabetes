@@ -11,33 +11,25 @@ from tensorflow.python.framework import ops
 
 app=Flask(__name__)
 
-# def build_model():
-#     model = Sequential()
-
-#     model.add(Dense(40,activation='relu', input_shape=(16,)))
-#     model.add(Dense(60,activation='relu'))
-#     model.add(Dropout(0.3))
-#     model.add(Dense(40,activation='relu'))
-#     model.add(Dropout(0.3))
-#     model.add(Dense(1,activation='sigmoid'))
-
-#     model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['acc'])
-
-#     return model
-# model=build_model()
-# model.load_weights("train_diabetes_model.h5")
-
 
 @app.route('/')
-@app.route('/index')
+@app.route('/index-zh')
 def index():
-    title="Welcome to my web"
+    title="歡迎使用糖尿病風險預測網站"
     return render_template('index.html',title=title)
 
-@app.route('/predict')
+@app.route('/index-en')
+def index1():
+    title="Welcome to the diabetes risk prediction web"
+    return render_template('index1.html',title=title)    
+
+@app.route('/predict-zh')
 def pred():
     return render_template('predict.html')
 
+@app.route('/predict-en')
+def pred1():
+    return render_template('predict1.html')
 
 def prediction_rate(new_data):
 
@@ -59,7 +51,7 @@ def prediction_rate(new_data):
     prediction = predict_all[-1]
     return prediction
 
-@app.route('/predict',methods=['GET','POST'])
+@app.route('/predict-zh',methods=['GET','POST'])
 def submit():
     new_data=[]
     age = request.values['age']
@@ -88,15 +80,35 @@ def submit():
     print(risk_rate)
     return render_template('predict.html',risk_rate=risk_rate)
 
-    # if float(risk_rate) > 50.0:
-    #     return render_template('predict.html',view= "Yor prediction of the diabetes risk rate is "+risk_rate+
-    #     " % ."+"<div>I suggest you go to the hospital to check your health quickly!!</div>")
-    #     #
-    # else:
-    #     return render_template('predict.html',view= "Yor prediction of the diabetes risk rate is "+risk_rate+
-    #     " % .")
 
-    
+@app.route('/predict-en',methods=['GET','POST'])
+def submit1():
+    new_data=[]
+    age = request.values['age1']
+    sex = request.values['sex1']
+    polyuria = request.values['polyuria1']
+    polydipsia = request.values['polydipsia1']
+    sudden_weight_loss = request.values['sudden weight loss1']
+    weakness = request.values['weakness1']
+    polyphagia = request.values['polyphagia1']
+    genital_thrush = request.values['genital thrush1']
+    visual_blurring = request.values['visual blurring1']
+    itching = request.values['itching1']
+    irritability = request.values['irritability1']
+    delayed_healing = request.values['delayed healing1']
+    partial_paresis = request.values['partial paresis1']
+    muscle_stiffness = request.values['muscle stiffness1']
+    alopecia = request.values['alopecia1']
+    obesity = request.values['obesity1']
+
+    new_data.extend((age,sex,polyuria,polydipsia,sudden_weight_loss,weakness,polyphagia,
+    genital_thrush,visual_blurring,itching,irritability,delayed_healing,partial_paresis,
+    muscle_stiffness,alopecia,obesity,'Negative'))
+    print(new_data)
+    predict_rate=prediction_rate(new_data)
+    risk_rate=float(format(predict_rate[0]*100 , '.2f'))
+    print(risk_rate)
+    return render_template('predict1.html',risk_rate=risk_rate)   
 
     
 if __name__=='__main__':

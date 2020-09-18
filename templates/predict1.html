@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Diabetes Risk Prediction </title>
+        <meta charset='utf-8'/>
+        <style type="text/css">
+            .title{
+                font-weight: bold;font-size: 80px;color:rgb(2, 20, 58);text-align: center;margin-bottom:30px;margin-top:20px;
+                background-color: rgb(164, 190, 243);opacity: 0.5;background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+            }
+            .question_content{
+                font-size: 28px;
+            }
+        </style>
+
+    </head>
+    <body style="margin : 0px ;background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);">
+        <div style='width:1024px;margin-right: auto;margin-left: auto;'>
+            <div style="height: 100px;font-size: 32px;font-weight: bold;text-align: center;">
+                {% if risk_rate%}
+                    {% if risk_rate > 80.0 %}
+                        <p style="font-weight: bold;color: rgb(199, 33, 33);">
+                            <span style="font-weight: bold;color:red">Warning!!</span>
+                            Yor prediction of the diabetes risk rate is {{risk_rate}}%.
+                        </p>
+                        <p style="font-weight: bold;margin-bottom: 15px;">I suggest you go to the hospital to check your health quickly!!</p>
+                    {% elif risk_rate > 60.0 %}
+                        <p style="font-weight: bold; color: salmon;">Yor prediction of the diabetes risk rate is {{risk_rate}}%.</p>
+                        <p style='margin-bottom: 15px;font-weight: bold;'>You have risk of diabetes!!</p>
+                    {%else%}
+                        <p style="font-weight: bold;">You're healthy.Yor prediction of the diabetes risk rate is lower than 60%.</p>
+
+                    {%endif%}        
+                {%else%}
+                    <p/>
+                {%endif%}        
+            </div>
+            <div class='title'>Diabetes Risk Prediction</div>
+            <div style='font-weight: bold;font-size: 30px;'>Please answer the following questions according to your own situation:</div>
+            <form method="POST" action="{{url_for('submit1')}}" >
+                <p class='question_content'>1.How old are you?
+                    <input type="text" name='age1' style="font-size: 24px;margin-left: 18px;" required="required">
+                </p>
+                <p class='question_content'>2.What's your Gender?
+                    <label><input type="radio" name='sex1' value="Male" >Male</label>
+                    <label><input type="radio" name='sex1' value="Female" checked="true">Female</label> 
+                </p>
+                <p class='question_content' >3.Polyuria :
+                    <label><input type="radio" name='polyuria1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='polyuria1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>4.Polydipsia :
+                    <label><input type="radio" name='polydipsia1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='polydipsia1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>5.Sudden weight loss :
+                    <label><input type="radio" name='sudden weight loss1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='sudden weight loss1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>6.Weakness :
+                    <label><input type="radio" name='weakness1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='weakness1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>7.Polyphagia :
+                    <label><input type="radio" name='polyphagia1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='polyphagia1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>8.Genital thrush :
+                    <label><input type="radio" name='genital thrush1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='genital thrush1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>9.Visual blurring :
+                    <label><input type="radio" name='visual blurring1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='visual blurring1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>10.Itching :
+                    <label><input type="radio" name='itching1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='itching1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>11.Irritability :
+                    <label><input type="radio" name='irritability1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='irritability1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>12.Delayed healing :
+                    <label><input type="radio" name='delayed healing1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='delayed healing1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>13.Partial paresis :
+                    <label><input type="radio" name='partial paresis1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='partial paresis1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>14.Muscle stiffness :
+                    <label><input type="radio" name='muscle stiffness1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='muscle stiffness1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>15.Alopecia :
+                    <label><input type="radio" name='alopecia1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='alopecia1' value="No" checked="true">No</label> 
+                </p>
+                <p class='question_content'>16.Obesity :
+                    <label><input type="radio" name='obesity1' value="Yes" >Yes</label>
+                    <label><input type="radio" name='obesity1' value="No" checked="true">No</label> 
+                </p>
+                <hr/>
+                <p style="margin-left: auto;margin-right: auto;display: table;">
+                    <input type="button" value="Go back" onclick="location.href='index-en';" style="font-size: 24px;margin-right: 10px;">
+                    <button type="submit" style="font-size: 24px;margin-right: 10px;margin-left: 10px;">Submit</button>
+                    <button type="reset" style="font-size: 24px;margin-left: 10px;">Cancel</button>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

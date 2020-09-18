@@ -35,59 +35,59 @@
     </head>
     <body style="margin : 0px">
         <div class='head'>
-            <div class="div-center" style="color:cornsilk;">~ ~ 歡迎您的拜訪 ~ ~
-                <span class="div-right" ><a href="/index-en">[English]</a></span>
+            <div class="div-center" style="color:cornsilk;">~ ~ Welcome to visit this web ~ ~
+                <span class="div-right" ><a href="/index-zh">[Chinese]</a></span>
             </div>      
         </div>
         <div style="clear:both; float:none; height:0; overflow:hidden"></div>
         <div class='content_block'>
-            <div class='content_title'>--這是早期糖尿病風險預測網站--</div>
-            <div class='content'>我的資料集來自 
+            <div class='content_title'>--This is early stage diabetes risk prediction website--</div>
+            <div class='content'>My dataset comes from  
                 <span> 
                     <a href='https://archive.ics.uci.edu/ml/index.php'> UC Irvine Machine Learning Repository(UCI)</a>
-                </span>網站
+                </span>website
             </div>
-            <div class='content'>我所使用的資料集名稱是 
+            <div class='content'>The title name of the dataset I used is 
                 <span>
                     <a href="http://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset." style="font-weight: bold;">
                         Early stage diabetes risk prediction dataset
-                    </a>(早期糖尿病風險預測).
+                    </a>.
                 </span> 
             </div>
             <div class='content'>
-                我認為資料集裡所有的變數均會對糖尿病有所影響
-                <div style="font-size: 30px;margin-top:20px;margin-bottom:10px;text-align: center;">總共有16個影響因素 :</div>
+                Accoring to the dataset, I think all of factors can impact diabetes.
+                <div style="font-size: 30px;margin-top:20px;margin-bottom:10px;text-align: center;">Total of 16 factors are as follows :</div>
                 <br/>
                 <table align="center">
                     <tr style="text-align: left;">
-                        <td style="padding-right: auto;"><li>年齡</li></td>
-                        <td style="padding-right: auto;"><li>性別</li></td>
-                        <td style="padding-right: auto;"><li>頻尿</li></td>
-                        <td style="padding-right: auto;"><li>多飲</li></td>
+                        <td style="padding-right: auto;"><li>Age</li></td>
+                        <td style="padding-right: auto;"><li>Gender</li></td>
+                        <td style="padding-right: auto;"><li>Polyuria</li></td>
+                        <td style="padding-right: auto;"><li>Polydipsia</li></td>
                     </tr>
                     <tr style="text-align: left;">
-                        <td style="padding-right: auto;"><li>突然體重減輕</li></td>
-                        <td style="padding-right: auto;"><li>虛弱</li></td>
-                        <td style="padding-right: auto;"><li>多食</li></td>
-                        <td style="padding-right: auto;"><li>生殖器鵝口瘡</li></td>
+                        <td style="padding-right: auto;"><li>Sudden weight loss</li></td>
+                        <td style="padding-right: auto;"><li>Weakness</li></td>
+                        <td style="padding-right: auto;"><li>Polyphagia</li></td>
+                        <td style="padding-right: auto;"><li>Genital thrush</li></td>
                     </tr>
                     <tr style="text-align: left;">
-                        <td style="padding-right: auto;"><li>視線模糊</li></td>
-                        <td style="padding-right: auto;"><li>瘙癢</li></td>
-                        <td style="padding-right: auto;"><li>煩燥</li></td>
-                        <td style="padding-right: auto;"><li>延期愈合</li></td>
+                        <td style="padding-right: auto;"><li>Visual blurring</li></td>
+                        <td style="padding-right: auto;"><li>Itching</li></td>
+                        <td style="padding-right: auto;"><li>Irritability</li></td>
+                        <td style="padding-right: auto;"><li>Delayed healing</li></td>
                     </tr>
                     <tr style="text-align: left;">
-                        <td style="padding-right: auto;"><li>局部麻痹</li></td>
-                        <td style="padding-right: auto;"><li>肌肉僵硬</li></td>
-                        <td style="padding-right: auto;"><li>脫髮</li></td>
-                        <td style="padding-right: auto;"><li>肥胖</li></td>
+                        <td style="padding-right: auto;"><li>Partial paresis</li></td>
+                        <td style="padding-right: auto;"><li>Muscle stiffness</li></td>
+                        <td style="padding-right: auto;"><li>Alopecia</li></td>
+                        <td style="padding-right: auto;"><li>Obesity</li></td>
                     </tr>
                 </table>   
             </div>
             <hr style="margin-bottom: 30px;"/>
-            <div class='content'>我的早期糖尿病風險預測模型準確率高達<span style="color: red;">92%</span>!!</div>
-            <a href='/predict-zh' style="color:darkslateblue;font-size: 30px;">按我預測</a> 
+            <div class='content'>The accuracy of my diabetes risk prediction model is about <span style="color: red;">92%</span>!!</div>
+            <a href='/predict-en' style="color:darkslateblue;font-size: 30px;">Go To Predict >></a> 
             <div style="margin-top:50px;">
                 <img src="{{url_for('static',filename='diabetes.jpg')}}" width='460' height="300" alt='picture' title="diabete"/>
                 <img src="static/diabetes1.png/" width='300' height="300" alt='picture' title="diabete"/>
