@@ -2,6 +2,7 @@
 
 ## 網站鏈結：
 https://diabetes-risk-predict.herokuapp.com/   
+(網站需等候一段時間進行連線)  
 
 ## 架構流程：
 * 使用Keras這個TensorFlow高階API去編寫風險預測模型  
